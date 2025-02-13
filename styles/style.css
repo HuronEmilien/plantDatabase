@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+
+
+/* CSS du BODY et HTML pour avoir la page correctement initialiser sans marge avec une  police de base un back ground color et le footer collé en bas */
+
+html {
+    height: 100%; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Archivo', sans-serif; /* Utilisation de la police Archivo */
+    position: relative;
+    background-color: #050f0f;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh; /* pour mettre le footer en bas de page */
+}
+
+.container {
+    flex: 1; /* Permet au contenu de remplir tout l'espace disponible sauf le footer */
+}
+
+
+/* CSS du NAV */
+
+nav {
+    background-color: #050f0f; 
+    padding: 1% 0; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; /* Aligner en haut de la page */
+    z-index: 1000; /* Assurer que le nav reste au-dessus du contenu */
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%; 
+}
+
+.nav-title {
+    font-size: 200%;
+    color: #e5b13a;
+    font-weight: bold; 
+}
+
+.nav-links {
+    font-size: 120%; 
+    display: flex;
+}
+
+.nav-links a {
+    margin: 0 20px; /* Marge pour séparer les liens */
+    text-decoration: none;
+    color: white; 
+    transition: all 0.3s ease; /* Transition pour l'animation */
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* CSS du H1 */
+
+
+h1 {
+    font-size: 400%; 
+    background-image: url("images/fondtest.jpg");
+    background-size: cover; /* Taille de l'image */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    padding: 8% 0; 
+    margin-top: 0; /* Supprimer la marge top */
+    margin-bottom: 0; /* Supprimer la marge bottom */
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+
+/* CSS de la partie en dessous du h1 */
+
+
+.welcome-block {
+    background-color: #050f0f;
+    padding: 0.1%; /* Supprimer l'espace en haut et en bas */
+    text-align: center;
+}
+
+.welcome-text {
+    font-family: 'Archivo', sans-serif;
+    color: white;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.welcome-button {
+    background-color: #e5b13a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Bord arrondi */
+    margin-bottom: 1%; /* Ajouter un espace en dessous du bouton */
+}
+
+.welcome-button:hover {
+    background-color: #c89627; /* Couleur de fond au survol */
+}
+
+
+/* CSS du footer */
+
+
+footer {
+    font-size: 10px; 
+    background-color: #050f0f; 
+    color: white; 
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les sections */
+    align-items: center; /* Aligner les sections verticalement au centre */
+    position: relative;
+}
+
+.footer-section {
+    text-align: center; /* Centrer le contenu horizontalement */
+    margin-bottom: 10px; /* Marge en bas entre les sections */
+    width: 33%; /* Largeur de chaque section */
+}
+
+.footer-section img {
+    width: 15%; 
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+}
+
+.copyright {
+    font-size: 10px; 
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%); /* Centrer horizontalement */
+}
+
+
+/* CSS de la Zone Principale */
+
+
+.zone-principale {
+    padding: 20px; /* Padding pour la zone principale */
+}
+
+
+/* CSS de saisir */
+
+
+form {
+    background-color: #f2f2f2; 
+    padding: 20px; /* Espacement intérieur du formulaire */
+    border-radius: 10px; 
+}
+
+label {
+    font-weight: bold; 
+    margin-bottom: 5px; /* Espacement en dessous des étiquettes */
+    display: block; /* Afficher chaque étiquette sur une ligne */
+}
+
+/* Avoir acces au input et au boutton du formulaire dans le html je n'arrivais pas à mettre une classe dans l'inspecteur ca ne le mettais pas j'ai donc trouver cette methode sur w3schools.*/
+
+input[type="text"] {
+    max-width: 99%; /* Largeur maximale */
+    width: 100%; /* Largeur maximale */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 10px; /* Espacement en dessous des champs de saisie */
+    border-radius: 5px; 
+    border: 1px solid #ccc; /* Bordure */
+}
+
+input[type="submit"] {
+    background-color: #e5b13a; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; 
+}
+
+input[type="submit"]:hover {
+    background-color: #c89627;
+}
+
+.white-text {
+    font-size: 130%;
+    color: white; 
+    display: block; 
+    margin: 0 auto; /* Centre le texte horizontalement */
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+
+/* CSS de  Affichage */
+
+
+.plante-table{
+    background-color: #f2f2f2;
+    width: 100%; /* Prend toute la largeur */
+    border-collapse: collapse; /* Fusionner les bordures de cellules */
+    margin-bottom: 20px;
+}
+
+.plante-table th, .plante-table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Espacement intérieur des cellules */
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+.plante-table th {
+    background-color: #f2f2f2; 
+}
+
+.plante-table tbody tr:hover {
+    background-color: #ffffff;
+}
+
+.plante-pagination {
+    margin-top: 20px; /* Marge en haut de la pagination */
+}
+
+.plante-pagination a {
+    padding: 4px 8px;
+    margin-right: 5px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white; 
+    color: #000; 
+}
+
+.plante-pagination a.current {
+    background-color: #f2f2f2; 
+    color: black; 
+}
+.plante-table th a {
+    color: #e5b13a;
+}
+
+.limite-form {
+    padding-top: 20px;
+    max-width: 30%; /* Définir la largeur maximale du formulaire en pourcentage */
+}
+
+.content-container {
+    background-color: #f2f2f2; 
+    padding: 20px; 
+    border-radius: 20px;
+}
+
+
+/* CSS des bouttons */
+
+.btn-primary, .btn-danger, .btn-info {
+    display: inline-block; /* Afficher en ligne */
+    padding: 6px 12px; /* Espacement interne */
+    text-decoration: none; /* Supprimer le soulignement du texte */
+    color: #fff; 
+    border: none; /* Supprimer la bordure */
+    border-radius: 4px;
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Fond jaune */
+    border: none; /* Supprimer la bordure */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 5px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur pointeur */
+}
+
+.btn-danger {
+    background-color: #ad212f; /* Couleur de fond pour le bouton de suppression */
+}
+
+.btn-info {
+    background-color: #127180; /* Couleur de fond pour le bouton de visualisation */
+}
+
+.btn-primary{
+    background-color: #306119; /* Couleur de fond pour le bouton de modification */
+}
+
+.btn-danger:hover{
+    background-color: #d11e1e; 
+}
+
+.btn-info:hover{
+    background-color: #17a2b8; 
+}
+
+.btn-primary:hover{
+    background-color: #10922c; 
+}
+
+
+/* CSS de Confirmation Modification */
+
+
+.confirmation-form {
+    background-color: #fff; 
+    border-radius: 10px; 
+    padding: 20px;
+}
+
+.update-message {
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+.update-message h2 {
+    color: #000; 
+}
+
+
+/* CSS de Accueil */
+
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.main-content > div {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+
+    position: relative;
+}
+
+.main-content h2 {
+    color: #ffc107;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.images {
+    display: flex;
+    justify-content: center; /* Centre les images avec moins d'espace entre elles */
+    margin-top: 20px;
+}
+
+.images img {
+    width: 20%;
+    border-radius: 10px;
+    margin: 0 6.5%; /* Augmente la marge pour plus d'espacement */
+}
+
+
+/* CSS de Voir */
+
+
+.plante-details {
+    color: black;
+    background-color: #f0f0f0;
+    padding: 20px; /* Ajoute un peu d'espace autour du texte */
+    border-radius: 10px;
+}
+
+.plante-details h2 {
+    color: #ffc107;
+}
+
+
+/* CSS de Recherche */
+
+.recherche-resultats {
+    margin-top: 20px; 
+    border-collapse: collapse; /* Fusionner les bordures de la table */
+    width: 100%; 
+    color: #ffc107;
+}
+
+.recherche-resultats th, .recherche-resultats td {
+    border: 1px solid #ddd; /* Bordure de 1 pixel solide avec couleur grise */ 
+    padding: 8px; 
+    text-align: left;
+}
+
+.recherche-resultats th {
+    background-color: #f2f2f2;
+    color: #ffc107;
+}
+
+.recherche-resultats td {
+    background-color: #f2f2f2; 
+    color: #000;
+}
+
+.no-resultats {
+    background-color: #f2f2f2;
+    color: #000; 
+    padding: 10px; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px; 
+}
+
+
+/* CSS de A propos */
+
+
+.about-section {
+    display: flex; 
+    justify-content: space-between; /* Répartir les blocs horizontalement avec un espace égal entre eux */
+}
+
+.about-section > div {
+    flex: 1; /* Chaque bloc prendra une part égale de l'espace disponible */
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px; 
+    margin-right: 10px; 
+}
+
+.about-section > div:last-child {
+    margin-right: 0; /* Supprimer la marge à droite du dernier bloc */
+}
+
+.about-section h2 {
+    color: #ffc107; 
+    font-size: 24px; 
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    color: black;
+    font-size: 18px; 
+    line-height: 1.6; /* Hauteur de ligne */
+    margin-bottom: 15px; 
+}
+
+.about-section ul {
+    list-style-type: none; /* Supprimer les puces */
+    padding: 0; 
+    margin-bottom: 15px; 
+}
+
+.about-section ul li {
+    color: black;
+    margin-bottom: 5px; /* Marge en bas de chaque élément de liste */
+}
